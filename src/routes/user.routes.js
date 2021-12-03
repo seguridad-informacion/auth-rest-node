@@ -1,11 +1,8 @@
-const Router = require('express').Router()
+const Router = require('express').Router();
+const { UserController } = require("../controllers");
 
-Router.post('/api/signin', (req, res) => {
-  res.send('signin')
-});
+Router.post('/api/signin', UserController.signIn);
 
-Router.post('/api/signup', (req, res) => {
-  res.send('signup')
-});
+Router.post('/api/signup', UserController.signUp);
 
 module.exports = Router;
